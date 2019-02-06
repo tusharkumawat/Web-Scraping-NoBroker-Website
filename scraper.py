@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 import time
 import random
 import progressbar
-import seaborn as sns
-sns.set()
+
 
 headers = ({'User-Agent':'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'})
 
@@ -23,11 +22,11 @@ available_fors = []
 immediate_possessions = []
 
 # progressbar for displaying % completion
-bar = progressbar.ProgressBar(maxval=100)
+bar = progressbar.ProgressBar(maxval=1000)
 bar.start()
 
 # scraping through 1000 pages of nobroker website of places in Chennai
-for page in range(100):
+for page in range(1000):
     bar.update(page+1)
     page += 1;
     link = "https://www.nobroker.in/property/rent/chennai/Chennai/?searchParam=W3sibGF0IjoxMy4wNDM3NjEyODI5MTkyLCJsb24iOjgwLjIwMDA2ODUxNjk2OTMsInNob3dNYXAiOmZhbHNlLCJwbGFjZUlkIjoiQ2hJSllUTjlULXBsVWpvUk05UmphQXVuWVc0IiwicGxhY2VOYW1lIjoiQ2hlbm5haSIsImNpdHkiOiJjaGVubmFpIn1d&sharedAccomodation=0&orderBy=nbRank,desc&radius=2&traffic=true&travelTime=30&propertyType=rent&pageNo="+str(page)
